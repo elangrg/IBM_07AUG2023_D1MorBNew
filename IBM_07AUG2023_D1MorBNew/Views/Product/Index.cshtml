@@ -1,0 +1,55 @@
+﻿@model IEnumerable<IBM_07AUG2023_D1MorBNew.Models.Product>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+                        @Html.ActionLink("Details", "Details", new {  id=item.ProductID  }) |
+                        @Html.ActionLink("Delete", "Delete", new {  id=item.ProductID  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
