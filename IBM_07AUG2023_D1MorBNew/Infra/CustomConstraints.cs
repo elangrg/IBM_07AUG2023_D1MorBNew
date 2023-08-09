@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace IBM_07AUG2023_D1MorBNew.Infra
+namespace IBM_07AUG2023_D1MorBNew
 {
 
     public class NotEqual : IRouteConstraint

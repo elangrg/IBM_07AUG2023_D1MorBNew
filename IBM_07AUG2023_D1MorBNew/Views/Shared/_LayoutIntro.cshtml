@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+@*
+    @{
+        IgnoreSection("Footer");
+    }
+ *@   
+  
+
+    @if (IsSectionDefined("Footer"))
+    {
+        <h1>
+
+            @RenderSection("Footer",false)
+
+        </h1>
+
+    }
+    else
+    {
+    <h1> Layout Footer Copy right 2023 </h1>
+    }
+
+
+
+</body>
+</html>

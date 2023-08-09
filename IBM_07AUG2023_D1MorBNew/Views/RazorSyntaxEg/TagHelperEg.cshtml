@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "TagHelperEg";
+}
+
+<h1>TagHelperEg</h1>
+
+<greet-tag-helper name="Ganesh"></greet-tag-helper>
+
+<greet-tag-helper name="Mahesh"></greet-tag-helper>
+
+
+
+<h3> Anchor Tag Helper</h3>
+<a asp-controller="RazorSyntaxEg"
+   asp-action="Index"
+   asp-route-id="1000"> Call Index With ID</a>
+
+
+<a asp-route="nmdRoute"> Named Route</a>
+
+
+@{
+    var parms = new Dictionary<string, string>
+{
+                { "EmpID", "11" },
+                { "EmpName", "Ganesha" }
+            };
+}
+
+<a asp-action="anotherActMethod"
+   asp-all-route-data="parms">All Param</a>
+
+
+<h3> environment </h3>
+
+<environment include="Staging,Production">
+    <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+</environment>
+
+<environment exclude="Development">
+    <strong>HostingEnvironment.EnvironmentName is not Development</strong>
+</environment>

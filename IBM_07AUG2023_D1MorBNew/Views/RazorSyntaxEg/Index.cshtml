@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+
+    <h1> Razor Syntax</h1>
+
+
+    <h2>@@{Server Side Code Block}</h2>
+
+    @{
+        string msg = "<script>alert('hello from JS!!!!')</script>";
+
+        int ProductID = 123;
+
+        T Min<T> (T a, T b)
+        {
+            return a;
+
+        }
+    }
+
+    <h2>@@Implicit Expression</h2>
+
+    <h3>
+        Property :  @DateTime.Now  <br /> 
+        Method : @DateTime.Now.ToString("dd MMM yyyy hh:mm:ss t")    <br />
+        Field :  @msg
+
+        RAW:    @Html.Raw(msg)
+
+
+    </h3>
+
+
+    <h2> @@(Explicit Expression)  </h2>
+    <h3>
+
+        Scenario 1. 
+             demo@abc.com abc@xyz
+        productid@ProductID productid@(ProductID)
+
+        <br />
+        
+        Scenario 2
+
+            Generic Method
+
+            @(Min<int>(100,200))
+
+    </h3>
+
+    <h2> @@Construct</h2>
+
+   
+        @for (int i = 0; i < 10; i++)
+        {
+            <h4> value of i is:  @i</h4>
+        }
+    
+
+        <h2> @@: and Text Tag</h2>
+
+
+    @{
+        string st = "demo Value";
+
+        <h3> @st </h3>
+
+        @: this is client side code
+        @: this
+        @: is client 
+        @: side code
+
+        <text>
+        this 
+        is 
+        multiple 
+        client 
+        side
+        code
+        
+        </text>
+
+
+
+
+
+
+        
+
+
+        
+        
+        }
+
+
+</body>
+</html>
